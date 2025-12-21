@@ -61,6 +61,7 @@ const CreateCourse = () => {
           <option value="Marketing">Marketing</option>
           <option value="Business">Business</option>
           <option value="Data Science">Data Science</option>
+          <option value="Data Science">Programming</option>
         </select><br /><br />
 
         <label htmlFor="price">Price (leave 0 for free):</label>

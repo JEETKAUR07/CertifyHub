@@ -1,3 +1,4 @@
+
 .auth-page {
   display: flex;
   justify-content: center;
@@ -125,7 +126,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: url('https://www.stonebridge.uk.com/images/home-learning.png')
+  background: url('https://i.pinimg.com/736x/2c/12/52/2c12526e27c3cc992abf014f8669a064.jpg')
     center/cover no-repeat;
   opacity: 1;
 }

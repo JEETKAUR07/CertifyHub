@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth';
 import apiRequest from '../utils/api';
 import './Courses.css';
 
-const categoryOptions = ['Development', 'Design', 'Marketing', 'Finance', 'Data Science', 'Business'];
+const categoryOptions = ['Development', 'Design', 'Marketing', 'Finance', 'Data Science', 'Business','Programming'];
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);

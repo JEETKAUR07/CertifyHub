@@ -82,6 +82,7 @@ const Instructor = () => {
             required
           >
             <option value="">Select Category</option>
+            <option value="Development">Programming</option>
             <option value="Development">Development</option>
             <option value="Design">Design</option>
             <option value="Marketing">Marketing</option>

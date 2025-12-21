@@ -9,7 +9,7 @@ const highlightStats = [
   { value: '65%', label: 'Avg. salary boost' },
 ];
 
-const curatedCategories = ['Development', 'Data Science', 'Design', 'Marketing', 'Business'];
+const curatedCategories = ['Development', 'Data Science', 'Design', 'Marketing', 'Business','Programming'];
 
 const featuredTracks = [
   {

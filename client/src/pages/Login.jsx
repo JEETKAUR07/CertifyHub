@@ -175,9 +175,9 @@ const Login = () => {
 
         <aside className="auth-aside">
           <div className="auth-aside__content">
-            <p className="eyebrow">Learner stories</p>
-            <h3>“Courses feel like Coursera—polished, rigorous, and flexible for my schedule.”</h3>
-            <p>Certify Hub</p>
+            <p className="eyebrow"></p>
+            <h3></h3>
+            <p></p>
           </div>
         </aside>
       </div>
