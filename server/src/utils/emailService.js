@@ -16,14 +16,12 @@ const createTransporter = () => {
       pass: process.env.SMTP_PASS, // Your email password or app password
     },
   });*/
-  return nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.gmail.com',
-  port: parseInt(process.env.SMTP_PORT) || 465,
-  secure: true,
+return nodemailer.createTransport({
+  service: "gmail",
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
-  }
+  },
 });
 };
 
