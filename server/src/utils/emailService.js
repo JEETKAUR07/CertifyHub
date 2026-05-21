@@ -1,39 +1,64 @@
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 
-// Create reusable transporter object using SMTP transport
-const createTransporter = () => {
-  // Validate required environment variables
-  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    throw new Error('SMTP_USER and SMTP_PASS environment variables are required for sending emails');
-  }
+// // Create reusable transporter object using SMTP transport
+// const createTransporter = () => {
+//   // Validate required environment variables
+//   if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+//     throw new Error('SMTP_USER and SMTP_PASS environment variables are required for sending emails');
+//   }
 
-  /*return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT) || 587,
-    secure: false, // true for 465, false for other ports
+//   /*return nodemailer.createTransport({
+//     host: process.env.SMTP_HOST || 'smtp.gmail.com',
+//     port: parseInt(process.env.SMTP_PORT) || 587,
+//     secure: false, // true for 465, false for other ports
+//     auth: {
+//       user: process.env.SMTP_USER, // Your email
+//       pass: process.env.SMTP_PASS, // Your email password or app password
+//     },
+//   });*/
+// return nodemailer.createTransport({
+//   host: process.env.SMTP_HOST,
+//   port: Number(process.env.SMTP_PORT),
+//   secure: process.env.SMTP_SECURE === "true",
+//   auth: {
+//     user: process.env.SMTP_USER,
+//     pass: process.env.SMTP_PASS,
+//   },
+//   connectionTimeout: 10000,
+// });
+// };
+const nodemailer = require("nodemailer");
+
+const createTransporter = async () => {
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: false,
     auth: {
-      user: process.env.SMTP_USER, // Your email
-      pass: process.env.SMTP_PASS, // Your email password or app password
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
-  });*/
-return nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT),
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+    tls: {
+      rejectUnauthorized: false,
+    },
+  });
+
+  await transporter.verify();
+
+  console.log("SMTP Server Ready");
+
+  return transporter;
 };
 
 // Send OTP email
 const sendOTPEmail = async (email, otp, userName) => {
   try {
-    const transporter = createTransporter();
+    //const transporter = createTransporter();
+    const transporter = await createTransporter();
 
     const mailOptions = {
-      from: `"CertifyHub" <${process.env.SMTP_USER}>`,
+      //from: `"CertifyHub" <${process.env.SMTP_USER}>`,
+      from: '"CertifyHub" <simranjeetkaur5026@gmail.com>',
       to: email,
       subject: 'Your Login OTP - CertifyHub',
       html: `
