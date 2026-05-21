@@ -7,7 +7,7 @@ const createTransporter = () => {
     throw new Error('SMTP_USER and SMTP_PASS environment variables are required for sending emails');
   }
 
-  return nodemailer.createTransport({
+  /*return nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
     port: parseInt(process.env.SMTP_PORT) || 587,
     secure: false, // true for 465, false for other ports
@@ -15,7 +15,19 @@ const createTransporter = () => {
       user: process.env.SMTP_USER, // Your email
       pass: process.env.SMTP_PASS, // Your email password or app password
     },
-  });
+  });*/
+  return nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.SMTP_PORT) || 587,
+  secure: false,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
+});
 };
 
 // Send OTP email
