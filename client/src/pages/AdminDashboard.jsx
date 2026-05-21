@@ -293,7 +293,8 @@ const AdminDashboard = () => {
                         <div className="user-info">
                           {user.profilePicture && (
                             <img 
-                              src={`http://localhost:5000${user.profilePicture}`}
+                              //src={`http://localhost:5000${user.profilePicture}`}
+                              src={`https://certifyhub-fmmw.onrender.com${user.profilePicture}`}
                               alt="Profile"
                               className="user-avatar"
                             />

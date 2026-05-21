@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import apiRequest from '../utils/api';
 import './Profile.css';
 
-const API_BASE = "http://localhost:5000/api";
+//const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://certifyhub-fmmw.onrender.com/api";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -88,7 +89,8 @@ const Profile = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
             <div>
               <img
-                src={previewPic ? (previewPic.startsWith('http') ? previewPic : `http://localhost:5000${previewPic}`) : '/default-profile.png'}
+                //src={previewPic ? (previewPic.startsWith('http') ? previewPic : `http://localhost:5000${previewPic}`) : '/default-profile.png'}
+                src={previewPic ? (previewPic.startsWith('http') ? previewPic : `https://certifyhub-fmmw.onrender.com${previewPic}`) : '/default-profile.png'}
                 alt="Profile"
                 style={{ width: 90, height: 90, borderRadius: '50%', objectFit: 'cover', border: '2px solid #e0eaff' }}
               />

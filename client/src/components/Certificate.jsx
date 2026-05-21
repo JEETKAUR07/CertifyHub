@@ -16,7 +16,8 @@ const Certificate = ({ certificate, onDownload }) => {
     try {
       // Use the direct download endpoint
       const response = await fetch(
-        `http://localhost:5000/api/certificates/download/${certificate.course._id}?userId=${certificate.student._id}`,
+        //`http://localhost:5000/api/certificates/download/${certificate.course._id}?userId=${certificate.student._id}`,
+        `https://certifyhub-fmmw.onrender.com/api/certificates/download/${certificate.course._id}?userId=${certificate.student._id}`,
         {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -59,7 +60,8 @@ const Certificate = ({ certificate, onDownload }) => {
     try {
       // Open PDF in new tab for viewing
       const response = await fetch(
-        `http://localhost:5000/api/certificates/download/${certificate.course._id}?userId=${certificate.student._id}`,
+        //`http://localhost:5000/api/certificates/download/${certificate.course._id}?userId=${certificate.student._id}`,
+        `https://certifyhub-fmmw.onrender.com/api/certificates/download/${certificate.course._id}?userId=${certificate.student._id}`,
         {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`

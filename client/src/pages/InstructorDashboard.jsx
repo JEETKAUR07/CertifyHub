@@ -313,7 +313,8 @@ const InstructorDashboard = () => {
             <div className="profile-summary">
               {dashboardData.user.profilePicture && (
                 <img 
-                  src={`http://localhost:5000${dashboardData.user.profilePicture}`}
+                  //src={`http://localhost:5000${dashboardData.user.profilePicture}`}
+                  src={`https://certifyhub-fmmw.onrender.com${dashboardData.user.profilePicture}`}
                   alt="Profile"
                   className="profile-image"
                 />

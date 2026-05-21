@@ -50,7 +50,8 @@ const Certificates = () => {
 
       // Use the direct download endpoint
       const response = await fetch(
-        `http://localhost:5000/api/certificates/download/${courseId}?userId=${studentId}`,
+        //`http://localhost:5000/api/certificates/download/${courseId}?userId=${studentId}`,
+        `https://certifyhub-fmmw.onrender.com/api/certificates/download/${courseId}?userId=${studentId}`,
         {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`

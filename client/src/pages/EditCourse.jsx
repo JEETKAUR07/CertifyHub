@@ -63,7 +63,9 @@ const EditCourse = () => {
     if (ppt) formData.append('ppt', ppt);
     if (pdf) formData.append('pdf', pdf);
     try {
-      await fetch(`http://localhost:5000/api/courses/${id}/modules/${moduleId}/upload`, {
+      //await fetch(`http://localhost:5000/api/courses/${id}/modules/${moduleId}/upload`,
+        await fetch(`https://certifyhub-fmmw.onrender.com/api/courses/${id}/modules/${moduleId}/upload`,
+         {
         method: 'POST',
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         body: formData,
@@ -111,7 +113,10 @@ const EditCourse = () => {
         const formData = new FormData();
         formData.append('file', input.file);
         try {
-          await fetch(`http://localhost:5000/api/courses/${id}/modules/${moduleId}/lessons/${lessonId}/upload`, {
+          //await fetch(`http://localhost:5000/api/courses/${id}/modules/${moduleId}/lessons/${lessonId}/upload`,
+            await fetch(`https://certifyhub-fmmw.onrender.com/api/courses/${id}/modules/${moduleId}/lessons/${lessonId}/upload`,
+            
+            {
             method: 'POST',
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
             body: formData,
@@ -197,7 +202,8 @@ const EditCourse = () => {
                   <span style={{ fontWeight: 500 }}>{lesson.title}</span> ({lesson.contentType})
                   {lesson.contentType === 'text' && <span style={{ marginLeft: 8, color: '#555' }}>{lesson.content}</span>}
                   {lesson.contentType !== 'text' && lesson.contentUrl && (
-                    <a href={`http://localhost:5000${lesson.contentUrl}`} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>View</a>
+                    //<a href={`http://localhost:5000${lesson.contentUrl}`} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>View</a>
+                    <a href={`https://certifyhub-fmmw.onrender.com${lesson.contentUrl}`} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>View</a>
                   )}
                   <button onClick={() => handleDeleteLesson(mod._id, lesson._id)} style={{ marginLeft: 12 }}>Delete</button>
                 </li>

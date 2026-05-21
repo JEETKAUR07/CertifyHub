@@ -1,4 +1,5 @@
-const API_BASE = "http://localhost:5000/api";
+//const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://certifyhub-fmmw.onrender.com/api";
 
 async function apiRequest(endpoint, method = "GET", body = null, auth = false) {
   const headers = {};

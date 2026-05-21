@@ -461,7 +461,7 @@ const CourseContent = () => {
                     ? viewer.lesson.content
                     : <span style={{ color: '#ef4444' }}><em>No text content available for this lesson.</em></span>}
                 </div>
-              )}
+              /*)}
               {viewer.lesson?.contentType === 'pdf' && viewer.lesson?.contentUrl && (
                 <a href={`http://localhost:5000${viewer.lesson.contentUrl}`} target="_blank" rel="noopener noreferrer" style={{ display: 'block', marginTop: 12, padding: 12, background: '#007bff', color: 'white', textDecoration: 'none', borderRadius: 4 }}>View PDF in New Tab</a>
               )}
@@ -476,7 +476,58 @@ const CourseContent = () => {
               )}
               {viewer.lesson?.contentType === 'video' && viewer.lesson?.contentUrl && (
                 <video src={`http://localhost:5000${viewer.lesson.contentUrl}`} controls style={{ width: '70vw', maxHeight: '70vh' }} />
-              )}
+              )}*/
+             )}
+{viewer.lesson?.contentType === 'pdf' && viewer.lesson?.contentUrl && (
+  <a
+    href={`https://certifyhub-fmmw.onrender.com${viewer.lesson.contentUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: 'block',
+      marginTop: 12,
+      padding: 12,
+      background: '#007bff',
+      color: 'white',
+      textDecoration: 'none',
+      borderRadius: 4
+    }}
+  >
+    View PDF in New Tab
+  </a>
+)}
+
+{viewer.lesson?.contentType === 'slide' && viewer.lesson?.contentUrl && (
+  <iframe
+    src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent('https://certifyhub-fmmw.onrender.com' + viewer.lesson.contentUrl)}`}
+    title="PPT Viewer"
+    style={{ width: '70vw', height: '70vh', border: 'none' }}
+  />
+)}
+
+{viewer.lesson?.contentType === 'doc' && viewer.lesson?.contentUrl && (
+  <iframe
+    src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent('https://certifyhub-fmmw.onrender.com' + viewer.lesson.contentUrl)}`}
+    title="DOC Viewer"
+    style={{ width: '70vw', height: '70vh', border: 'none' }}
+  />
+)}
+
+{viewer.lesson?.contentType === 'pages' && viewer.lesson?.contentUrl && (
+  <iframe
+    src={`https://certifyhub-fmmw.onrender.com${viewer.lesson.contentUrl}`}
+    title="Pages Viewer"
+    style={{ width: '70vw', height: '70vh', border: 'none' }}
+  />
+)}
+
+{viewer.lesson?.contentType === 'video' && viewer.lesson?.contentUrl && (
+  <video
+    src={`https://certifyhub-fmmw.onrender.com${viewer.lesson.contentUrl}`}
+    controls
+    style={{ width: '70vw', maxHeight: '70vh' }}
+  />
+)}
             </div>
           </div>
         </div>
