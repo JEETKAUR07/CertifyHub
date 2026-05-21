@@ -94,7 +94,7 @@ const frontendPath = path.join(process.cwd(), "client/build");
 
 app.use(express.static(frontendPath));
 
-app.get("*", (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
