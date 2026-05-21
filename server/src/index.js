@@ -90,7 +90,7 @@ app.get("/health", (req, res) => {
 //   res.send("CertifyHub Backend Running 🚀");
 // });
 
-const frontendPath = path.join(process.cwd(), "client/build");
+const frontendPath = path.join(__dirname, "../../client/build");
 
 app.use(express.static(frontendPath));
 
